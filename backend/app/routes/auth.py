@@ -14,10 +14,14 @@ class Token(BaseModel):
     access_token: str
     token_type: str
 
-class UserCreate(BaseModel):
+class UserBase(BaseModel):
     username: str
     email: str
+    
+class UserCreate(UserBase):
     password: str
+    
+
 
 router = APIRouter(tags=["authentication"])
 
@@ -56,3 +60,8 @@ async def register_user(user_data: UserCreate, db: Session = Depends(get_db)):
         data={"sub": user.username}, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
+
+
+@router.get("/users/me/", response_model=UserBase)
+async def read_users_me(current_user: UserBase = Depends(get_current_user)):
+    return current_user
