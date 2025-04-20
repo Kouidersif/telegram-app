@@ -1,0 +1,50 @@
+# Dependencies
+node_modules
+__pycache__
+*.pyc
+
+
+# Version control
+.git
+.gitignore
+
+# Environment files
+.env*
+*.env
+venv/
+.Python
+
+# Development files
+.vscode/
+.idea/
+*.log
+*.sqlite*
+.flowbite-react
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Docker files
+Dockerfile*
+docker-compose*
+
+# Test files
+__tests__/
+tests/
+.coverage
+
+# Documentation
+README.md
+docs/
+
+# Cache
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Temporary files
+*.swp
+*.swo
+.DS_Store
