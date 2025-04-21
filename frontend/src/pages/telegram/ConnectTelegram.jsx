@@ -19,7 +19,8 @@ const ConnectTelegram = () => {
         if (codeVerified) {
             console.log('code verified then navigate to home');
             dispatch(setCodeVerified(false))
-            navigate('/');
+            // navigate('/');
+            window.location.href = '/';
         }
     }, [codeVerified]);
 
